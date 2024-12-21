@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .img-shadow{
+    filter: drop-shadow(40px 50px 25px #0f1115);
+  }
+  .img-shadow{
+    filter: drop-shadow(40px 50px 25px #3030307a);
+  }
+}
