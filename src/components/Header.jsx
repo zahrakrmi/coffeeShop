@@ -6,11 +6,11 @@ const Header = () => {
             <div className='container mx-auto'>
                 <div className='flex justify-between items-center'>
                 {/* ////////////logo////////// */}
-                <h1 className='font-semibold text-2xl uppercase'><span className='text-primary'>Black </span>Coffee</h1>
+                <h1 className='font-semibold text-2xl uppercase lg:ml-10'><span className='text-primary'>Black </span>Coffee</h1>
 
                 {/* ///////////menu////////// */}
             <div>
-                <GiHamburgerMenu className='text-3xl cursor-pointer'/>
+                <GiHamburgerMenu className='text-3xl cursor-pointer lg:mr-10'/>
             </div>
                 </div>
             </div>
