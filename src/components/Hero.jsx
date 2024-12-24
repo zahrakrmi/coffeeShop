@@ -40,7 +40,7 @@ const Hero = () => {
                   </div>
                   {/* //////hero image section/////// */}
                   <div className='relative'>
-                    <motion.img initial={{opacity:0, Scale:0}} animate={{opacity:1,Scale:1}} transition={{type:'spring',stiffness:'100',damping:10,delay:0.4}} src="./black.png" alt=""  className='relative h-[400px] z-40 md:h-[600px] img-shadow'/>
+                    <motion.img initial={{opacity:0, Scale:0}}  animate={{opacity:1,Scale:1}} transition={{type:'spring',stiffness:'100',damping:10,delay:0.4}} src="./black.png" alt=""  className='relative h-[400px] z-40 md:h-[600px] img-shadow'/>
                     {/* /////////circle//////////// */}
                     <motion.div initial={{opacity:0, y:100}} animate={{opacity:1,y:0}} transition={{type:'spring',stiffness:'100',damping:10,delay:0.8}} className=' w-[180px] h-[180px] absolute top-24 -right-16 border-[20px] border-primary rounded-full z-10 '></motion.div>
                     {/* //////////big text/////////// */}
