@@ -6,7 +6,7 @@ const Banner = () => {
     <div className='container mx-auto'>
       <Image 
         src='/baner.jpg' 
-        className='w-full lg:px-24 rounded-lg' 
+        className='w-full lg:px-24 rounded-lg object-cover' 
         width={400} 
         height={400} 
         alt='banner' 

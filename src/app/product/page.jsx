@@ -81,7 +81,8 @@ export default function Product() {
                     const randomRating = Math.floor(Math.random() * 5) + 1;
                     const x = `${val.id}-${val.name}`;
                     return (
-                        <motion.div hidden={{opacity:0, y:20}} visible={{opacity:1,y:0}} transition={{type:'spring',stiffness:'150',damping:10,ease:'easeInOut'}}
+                        <motion.div variants={cardVariants} initial="hidden"
+                            whileInView="visible"
                             key={val.id}
                             className=" text-lightGray p-5 flex flex-col justify-center items-center text-center"
                         >
