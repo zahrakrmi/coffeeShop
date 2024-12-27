@@ -52,15 +52,16 @@ export default function Page({ params: paramsPromise }) {
 
 
     return (
-        <main>
-            <Link href='./basket'>go to basket</Link>
-            <h2>hello, welcome to page: {data.id} : {data.name}!</h2>
-            <h3>{data.desc}</h3>
-            <Image src={data.avatar} width="200" height="200" alt={data.name} />
-            <h4>{data.price}</h4>
-            <button><Link href="./">Back to list</Link></button>
+        <div className="flex flex-wrap w-full  justify-evenly">
+            <button className="mt-20 h-10 border"><Link href="./">Back to list</Link></button>
+            <Link href='./basket' className="mt-20 h-10 border">go to basket</Link>
+            <Image src={data.avatar} width="400" height="400" alt={data.name} className="border mt-32" />
+            <h3 className="mt-20 -ml-64 h-10 border">{data.desc}</h3>
+            <div className="w-full lg:w-1/2 lg:static top-20 h-max mt-20 border">uhuyh
+            </div>
+            <h4 className="mt-20">{data.price}</h4>
             <button onClick={() => updateBasket(data)}>Add to Basket</button>
-        </main>
+        </div>
     );
 }
 

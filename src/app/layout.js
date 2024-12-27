@@ -1,5 +1,7 @@
 import { Inter,Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter=Inter({
   weight:["100","200","300","400","500","600","600","700","800","900"],
@@ -23,7 +25,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${bebasNeue.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

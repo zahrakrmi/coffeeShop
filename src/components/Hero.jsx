@@ -76,7 +76,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-7xl font-bold leading-tight ml-4 md:ml-14 opacity-0">
                 Black Coffee Shop
               </h1>
-              <div className="relative hidden md:flex">
+              <div className="relative hidden lg:flex">
                 <div className="relative z-10 space-y-4">
                   <h1 className="text-2xl ">Black Lifestyle Lovers,</h1>
                   <h2 className="text-sm opacity-55 leading-loose">

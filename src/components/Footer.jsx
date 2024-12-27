@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
 import { FaInstagram, FaLinkedin, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
-import { CreditCard } from '@mui/icons-material'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 

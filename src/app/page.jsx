@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Product from "@/app/product/page";
 import Buy from "@/components/Buy";
 import Banner from "@/components/Banner";
-import Footer from "@/components/Footer";
+
 
 
 
@@ -14,7 +14,6 @@ const page = () => {
       <Product />
       <Buy />
       <Banner />
-      <Footer />
     </div>
   )
 }

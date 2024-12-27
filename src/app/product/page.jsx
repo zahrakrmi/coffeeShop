@@ -1,9 +1,10 @@
 'use client';
 
 import Link from "next/link";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { FaPlus, FaEye } from 'react-icons/fa'
 import { Button, Rating } from "@mui/material";
 
 
@@ -84,36 +85,48 @@ export default function Product() {
                         <motion.div variants={cardVariants} initial="hidden"
                             whileInView="visible"
                             key={val.id}
-                            className=" text-lightGray p-5 flex flex-col justify-center items-center text-center"
+                            className="relative text-lightGray p-5 flex flex-col justify-center items-center text-center"
                         >
-                            <Image
-                                src={val.avatar}
-                                width={200}
-                                height={200}
-                                alt={val.name}
-                                className="m-5  hover:scale-110 duration-300 cursor-pointer"
-                            />
-                            <p className="text-lg font-semibold text-primary ">{val.desc}</p>
-                            <h2 className="text-xl w-full mt-2">
-                                Price: <span className="text-2xl font-bold">${val.price}</span>
-                            </h2>
-                            <Rating
-                                name={`rating-${val.id}`}
-                                value={randomRating}
-                                readOnly
-                                className="w-full flex justify-center mt-2"
-                            />
-                            <div className="flex justify-center w-full mt-4">
-                                <Button
-                                    variant="contained"
-                                    color="warning"
-                                    sx={{ width: '150px', height: '50px' }}
-                                >
+                            <div className="relative group">
+                                <Image
+                                    src={val.avatar}
+                                    width={200}
+                                    height={200}
+                                    alt={val.name}
+                                    className="m-5  hover:scale-110 duration-300 cursor-pointer"
+                                />
+                                <p className="text-lg font-semibold text-primary ">{val.desc}</p>
+                                <h2 className="text-xl w-full mt-2">
+                                    Price: <span className="text-2xl font-bold">${val.price}</span>
+                                </h2>
+
+                                <Rating
+                                    name={`rating-${val.id}`}
+                                    value={randomRating}
+                                    readOnly
+                                    className="w-full flex justify-center mt-2"
+                                />
+
+                                <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-all bg-primary rounded-lg p-2 w-12 h-10 flex justify-center items-center  duration-300">
                                     <Link href={x} as={x}>
-                                        ADD To Cart
+                                        <Button>
+                                            <div className="flex justify-center items-center w-5 h-5 text-white">
+                                                <FaPlus className="text-3xl" />
+                                            </div>
+                                        </Button>
                                     </Link>
-                                </Button>
+                                </div>
+                                <div className="absolute top-12 right-0 opacity-0 group-hover:opacity-100 bg-lightOrange rounded-lg p-2 w-12 h-10 flex justify-center items-center transition-all duration-300">
+                                    <Link href={x} as={x}>
+                                        <Button>
+                                            <div className="flex justify-center items-center w-5 h-5 text-lightGray">
+                                                <FaEye className="text-3xl" />
+                                            </div>
+                                        </Button>
+                                    </Link>
+                                </div>
                             </div>
+
                         </motion.div>
                     );
                 })}
