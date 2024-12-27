@@ -34,3 +34,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ --------------------------------------------------------------------------
+ ![Screenshot 2024-12-27 170202](https://github.com/user-attachments/assets/9a8bc611-0620-4153-89fa-7a15ae306b2a)
+ ![Screenshot 2024-12-27 170231](https://github.com/user-attachments/assets/58589af7-b0da-4803-b67c-4c064550cc52)
+- [Demo Project](https://coffee-shop-puce.vercel.app/)
+
+- Created - 2024-12-27
+- Code by me
+- Technologies Used - Tailwind , JavaScript , React, next,mockapi,zustand
+- How to reach me : with my [linkedin](https://www.linkedin.com/in/zahra-karami-7643ba231/)
