@@ -31,7 +31,8 @@ const Hero = () => {
                 <div className="relative z-10 space-y-4">
                   <h1 className="text-2xl">Black Lifestyle Lovers,</h1>
                   <h2 className="text-sm opacity-55 leading-loose">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quam minus hic laudantium eveniet sapiente adipisci odit facilis quis debitis maiores doloribus culpa quas quae nesciunt distinctio voluptatem, vitae quos.
+                  "A good meal is like a journey—it tells a story of flavors, cultures, and memories shared at the table."
+                  "Drinks, whether warm or cold, have a magical way of refreshing the soul and enhancing every moment."
                   </h2>
                 </div>
                 <div className="absolute -top-6 -left-10 w-[250px] h-[190px] bg-gray-700/25"></div>
@@ -80,7 +81,7 @@ const Hero = () => {
                 <div className="relative z-10 space-y-4">
                   <h1 className="text-2xl ">Black Lifestyle Lovers,</h1>
                   <h2 className="text-sm opacity-55 leading-loose">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quam minus hic laudantium eveniet sapiente adipisci odit facilis quis
+                  Food and drinks are not just necessities; they are an art of bringing people together, offering comfort, joy, and a taste of culture with every bite and sip.
                   </h2>
                 </div>
                 <div className="absolute -top-6 -right-10 w-[250px] h-[190px] bg-darkGray/50"></div>

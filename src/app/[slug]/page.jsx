@@ -4,6 +4,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useStore from "../store/store";
+import ProductDetail from "@/components/detail";
+import CustomAlertBox from "@/components/alert";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import LoadingComponent from "@/components/LoadingComponent";
 
 async function getData(x) {
     const res = await fetch('https://675efc0f1f7ad24269974044.mockapi.io/procuct/' + parseInt(x));
@@ -17,6 +21,9 @@ export default function Page({ params: paramsPromise }) {
     const {updateBasket} = useStore();
     const [params, setParams] = React.useState(null);
     const [data, setData] = React.useState(null);
+    const [showAlert, setShowAlert] = React.useState(false);
+    const [alertMessage, setAlertMessage] = React.useState('')
+    const [alertSeverity, setAlertSeverity] = React.useState('success')
 
     // Unwrap `params`
     React.useEffect(() => {
@@ -46,21 +53,41 @@ export default function Page({ params: paramsPromise }) {
 
     // Render loading states
     if (!params || !data) {
-        return <main><h1>Loading...</h1></main>;
+        return <main><LoadingComponent /></main>;
     }
 
 
 
+    const alert = (data) => {
+
+        const alertType = updateBasket(data)
+
+
+        if (alertType === "success") {
+            setAlertMessage("product added to cart!");
+            setAlertSeverity("success");
+        } else if (alertType === "error") {
+            setAlertMessage("product is already in the cart!");
+            setAlertSeverity("error");
+        }
+
+        setShowAlert(true);
+
+        setTimeout(() => {
+            setShowAlert(false);
+        }, 2000);
+    };
+
+
     return (
         <div className="flex flex-wrap w-full  justify-evenly">
-            <button className="mt-20 h-10 border"><Link href="./">Back to list</Link></button>
-            <Link href='./basket' className="mt-20 h-10 border">go to basket</Link>
-            <Image src={data.avatar} width="400" height="400" alt={data.name} className="border mt-32" />
-            <h3 className="mt-20 -ml-64 h-10 border">{data.desc}</h3>
-            <div className="w-full lg:w-1/2 lg:static top-20 h-max mt-20 border">uhuyh
+            <button className="mt-20 h-10 "><Link href="./"><ArrowBackIcon/></Link></button>
+           
+            <Image src={data.avatar} width="400" height="400" alt={data.name} className=" mt-32" />
+            <div className="w-full lg:w-1/2 lg:static top-20 h-max mt-32 ">
+            <ProductDetail data={data} onAddToCart={() => alert(data)} />
+            <CustomAlertBox showAlert={showAlert} severity={alertSeverity} message={alertMessage} />
             </div>
-            <h4 className="mt-20">{data.price}</h4>
-            <button onClick={() => updateBasket(data)}>Add to Basket</button>
         </div>
     );
 }

@@ -19,7 +19,8 @@ const Footer = () => {
                         <h1 className='text-3xl font-bold uppercase'>
                             Black Coffee
                         </h1>
-                        <p className='text-sm max-w-[300px]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, dolorem reprehenderit cumque aut provident vel deleniti maxime facilis ex praesentium, amet, commodi quos. Porro amet maiores accusantium fugit repellat laudantium!</p>
+                        <p className='text-sm max-w-[300px]'>  "A good meal is like a journey—it tells a story of flavors, cultures, and memories shared at the table."
+                        "Drinks, whether warm or cold, have a magical way of refreshing the soul and enhancing every moment."</p>
                         <div className='flex'>
                             <FaMapMarkerAlt className=' w-[40px] h-[20px] mt-1' /> Tehran ,Iran
                         </div>

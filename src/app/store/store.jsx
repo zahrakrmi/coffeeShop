@@ -3,16 +3,23 @@ import { create } from 'zustand'
 
 const useStore = create((set) => ({
     data: [],
-    updateBasket: (addPro) => set((state) => {
-        const x = state.data.find((val) => val.id === addPro.id)
-        if (x) {
-            alert('adam bash...')
-            return state;
+    updateBasket: (addPro) => {
+        let alertType=null;
 
-        } else {
-            return { data: [...state.data, addPro] };
-        }
-    }),
+        set((state) => {
+            const x = state.data.find((val) => val.id === addPro.id)
+            if (x) {
+                alertType='error'
+                return state;
+    
+            } else {
+                alertType='success'
+                return { data: [...state.data, addPro] };
+            }
+        });
+        return alertType;
+    } ,
+    
 
     myPlus: (i) => set((state) => {
         const x = state.data.findIndex((val) => val.id === i)

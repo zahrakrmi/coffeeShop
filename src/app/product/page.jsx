@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaPlus, FaEye } from 'react-icons/fa'
 import { Button, Rating } from "@mui/material";
-
+import { useRouter } from 'next/navigation';
 
 
 
@@ -35,7 +35,7 @@ const cardVariants = {
 }
 export default function Product() {
     const [data, setData] = useState([]);
-
+    const router = useRouter();
     useEffect(() => {
         async function fetchData() {
             try {
@@ -53,6 +53,16 @@ export default function Product() {
         fetchData();
     }, []);
 
+    const handleAddToCart = (product) => {
+        // Save product to localStorage
+        const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+        existingCart.push(product);
+        localStorage.setItem('cart', JSON.stringify(existingCart));
+
+        // Redirect to cart page
+        router.push('/cart');
+    };
+
     return (
         <div className="container mx-auto my-16">
             {/* Header Section */}
@@ -63,7 +73,7 @@ export default function Product() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: 'spring', stiffness: 150, damping: 10, delay: 0.2 }}
                 >
-                    Fresh and <span className="text-primary">Testycoffee</span>
+                    All kinds of  <span className="text-primary">drinks and food</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, scale: 0.5 }}
@@ -72,7 +82,7 @@ export default function Product() {
                     transition={{ type: 'spring', stiffness: 150, damping: 10, delay: 0.4 }}
                     className="opacity-50 text-sm"
                 >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum id culpa quasi aliquid laudantium. Accusantium totam, ullam harum vel, praesentium hic laudantium, modi sequi sapiente quibusdam ipsa voluptatibus laboriosam voluptates.
+                    Food and drinks are not just necessities; they are an art of bringing people together, offering comfort, joy, and a taste of culture with every bite and sip.
                 </motion.p>
             </div>
 
@@ -106,17 +116,7 @@ export default function Product() {
                                     readOnly
                                     className="w-full flex justify-center mt-2"
                                 />
-
-                                <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-all bg-primary rounded-lg p-2 w-12 h-10 flex justify-center items-center  duration-300">
-                                    <Link href={x} as={x}>
-                                        <Button>
-                                            <div className="flex justify-center items-center w-5 h-5 text-white">
-                                                <FaPlus className="text-3xl" />
-                                            </div>
-                                        </Button>
-                                    </Link>
-                                </div>
-                                <div className="absolute top-12 right-0 opacity-0 group-hover:opacity-100 bg-lightOrange rounded-lg p-2 w-12 h-10 flex justify-center items-center transition-all duration-300">
+                                <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 bg-lightOrange rounded-lg p-2 w-12 h-10 flex justify-center items-center transition-all duration-300">
                                     <Link href={x} as={x}>
                                         <Button>
                                             <div className="flex justify-center items-center w-5 h-5 text-lightGray">
